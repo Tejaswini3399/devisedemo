@@ -1,0 +1,20 @@
+<div class="navbar-header">    
+</div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <%if current_admin.present? %>
+			<ul class="nav navbar-nav">
+					<li> <%= link_to 'Employees', employees_path %> </li>
+		
+					<li> <%= link_to 'Clients', clients_path %> </li>
+		
+					<li> <%= link_to 'Projects', projects_path %> </li>
+		
+					<li> <%= link_to 'Income', income_path %> </li>
+		
+					<li> <%= link_to 'Expenses', expenses_path %> </li>
+					<li> <%= link_to 'Sign Out', logout_path %>	</li>
+				</ul>
+		<% end %>
+</div>
+            <!-- /.navbar-collapse -->

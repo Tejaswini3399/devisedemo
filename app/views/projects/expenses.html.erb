@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Expense </div>
+
+  <!-- Table -->
+  <table class="table">
+		<thead>
+		  <tr>
+		    <th>Project</th>
+		    <th>Expenses</th>            
+		  </tr>
+		</thead>
+
+		<tbody>
+		  <% @projects.each do |project| %>
+		    <tr>
+		      <td><%= project.title %></td>
+		      <td><%= project.expenses %></td> 	    
+		    </tr>
+		  <% end %>
+		     <tr>
+		        <td><b>Total Expenses</b></td> 
+		        <td><b><%= @total_expenses %></b></td> 
+		     </tr>
+		</tbody>
+  </table>
+</div>

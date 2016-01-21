@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">List of Clients <%= link_to 'New Client', new_client_path, :class => "pull-right" %></div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Project</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.name %></td>
+        <td><%= client.project_id %></td>
+        <td><%= link_to 'Show', client %></td>
+        <td><%= link_to 'Edit', edit_client_path(client) %></td>
+        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>
+
+<br>
+
+

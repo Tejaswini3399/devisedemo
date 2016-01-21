@@ -1,0 +1,44 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, :class => "form-control", :placeholder => "Title" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :income %><br>
+    <%= f.text_field :income, :class => "form-control", :placeholder => "Income"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :expenses %><br>
+    <%= f.text_field :expenses, :class => "form-control", :placeholder => "Expenses"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :employee_id %><br>
+    <%= f.collection_select(:employee_id, Employee.all, :id, :full_name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :project_desc %><br>
+    <%= f.text_area :project_desc, :class => "form-control", :placeholder => "Project Description"  %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Save', :class => "btn btn-success" %>
+  </div>
+<% end %>
+
+    
+<script>
+$(document).ready(function(){
+ $('select').addClass("form-control")
+});
+</script>

@@ -1,0 +1,44 @@
+<%= form_for(@employee) do |f| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% @employee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name, :class => "form-control", :placeholder => "First Name" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name, :class => "form-control", :placeholder => "Last Name" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :emp_id %><br>
+    <%= f.text_field :emp_id, :class => "form-control", :placeholder => "Employee ID" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location %><br>
+    <%= f.text_field :location, :class => "form-control", :placeholder => "Location" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, :class => "form-control", :placeholder => "Email" %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Save', :class => "btn btn-success" %>
+  </div>
+<% end %>
+
+    
+<script>
+$(document).ready(function(){
+ $('select').addClass("form-control")
+});
+</script>
